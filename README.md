@@ -5,8 +5,10 @@ dependencies.
 
 ## Preparing your dev environment
 
-You'll need Java and Gradle. Can be done using ```gradlew``` (on mac/linux)
-or ```gradlew.bat``` (on PC).
+You'll need Java and Gradle.
+
+If you don't want to install gradle globally,
+you can use ```./gradlew``` instead of ```gradle``` to run the scripts below (or ```gradlew.bat```on PC)
 
 ## Running
 
