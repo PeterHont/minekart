@@ -12,6 +12,8 @@ or ```gradlew.bat``` (on PC).
 
 ```gradle run```
 
+A window should pop up. If so, your environment is up and running. Congrats :)
+
 ## Testing
 
 ```gradle test```
