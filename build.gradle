@@ -1,7 +1,7 @@
 /*
 	Gradle build script for MineKart
-
  */
+
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
@@ -11,35 +11,35 @@ plugins {
 }
 
 tasks.withType(JavaExec) {
-	//lwjgl needs this when running
+    //lwjgl needs this when running
     jvmArgs = ['-XstartOnFirstThread']
 }
 
 repositories {
     //We'll fetch our dependencies from the maven repo
-  	mavenCentral()
+    mavenCentral()
 }
 
 project.ext.lwjglVersion = "3.2.1"
 project.ext.lwjglNatives = "natives-macos"
 
 dependencies {
-	//Unit testing
+    //Unit testing
     testImplementation 'junit:junit:4.12'
 
-	//lwjgl dependencies, generated using https://www.lwjgl.org/customize
-  	implementation "org.lwjgl:lwjgl:$lwjglVersion"
-	implementation "org.lwjgl:lwjgl-assimp:$lwjglVersion"
-	implementation "org.lwjgl:lwjgl-glfw:$lwjglVersion"
-	implementation "org.lwjgl:lwjgl-openal:$lwjglVersion"
-	implementation "org.lwjgl:lwjgl-opengl:$lwjglVersion"
-	implementation "org.lwjgl:lwjgl-stb:$lwjglVersion"
-	runtimeOnly "org.lwjgl:lwjgl:$lwjglVersion:$lwjglNatives"
-	runtimeOnly "org.lwjgl:lwjgl-assimp:$lwjglVersion:$lwjglNatives"
-	runtimeOnly "org.lwjgl:lwjgl-glfw:$lwjglVersion:$lwjglNatives"
-	runtimeOnly "org.lwjgl:lwjgl-openal:$lwjglVersion:$lwjglNatives"
-	runtimeOnly "org.lwjgl:lwjgl-opengl:$lwjglVersion:$lwjglNatives"
-	runtimeOnly "org.lwjgl:lwjgl-stb:$lwjglVersion:$lwjglNatives"
+    //lwjgl dependencies, generated using https://www.lwjgl.org/customize
+    implementation "org.lwjgl:lwjgl:$lwjglVersion"
+    implementation "org.lwjgl:lwjgl-assimp:$lwjglVersion"
+    implementation "org.lwjgl:lwjgl-glfw:$lwjglVersion"
+    implementation "org.lwjgl:lwjgl-openal:$lwjglVersion"
+    implementation "org.lwjgl:lwjgl-opengl:$lwjglVersion"
+    implementation "org.lwjgl:lwjgl-stb:$lwjglVersion"
+    runtimeOnly "org.lwjgl:lwjgl:$lwjglVersion:$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-assimp:$lwjglVersion:$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw:$lwjglVersion:$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal:$lwjglVersion:$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl:$lwjglVersion:$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-stb:$lwjglVersion:$lwjglNatives"
 }
 
 mainClassName = 'minekart.Start'
