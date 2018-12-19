@@ -5,9 +5,12 @@ public class Item implements Itemable {
     private int cooldown;
     private int maxStackSize;
 
+    private String textureName;
+
     public Item(final Properties properties) {
         cooldown = properties.cooldown;
         maxStackSize = properties.maxStackSize;
+        textureName = properties.textureName;
     }
 
     @Override
@@ -15,9 +18,19 @@ public class Item implements Itemable {
         return this;
     }
 
+    public String getTextureName() {
+        return textureName;
+    }
+
     public static class Properties {
         private int maxStackSize = MAX_STACK_SIZE;
         private int cooldown = 1;
+        private String textureName;
+
+        public Properties setTextureName(final String name) {
+            textureName = name;
+            return this;
+        }
 
         public Properties stacksTo(final int max) {
             maxStackSize = max;
