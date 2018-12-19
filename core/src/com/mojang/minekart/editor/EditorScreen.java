@@ -14,13 +14,20 @@ public class EditorScreen extends ScreenAdapter {
     public EditorScreen(MineKartGame game) {
         stage = new Stage();
 
-        Label label = new Label("This is the editor screen", game.skin);
-        stage.addActor(label);
+        Label topLabel = new Label("Build your cart!", game.skin);
+        topLabel.setPosition(10, 500);
+        stage.addActor(topLabel);
+
+
+
+        CartGridView cartGridView = new CartGridView();
+        stage.addActor(cartGridView);
+
     }
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0.2f, 1);
+        Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         stage.act(delta);
