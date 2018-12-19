@@ -4,8 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.mojang.minekart.com.mojang.minekart.core.Items;
-
+import com.mojang.minekart.com.mojang.minekart.core.ItemStack;
 /*
     Shows a single tile square, which can contain a block/item.
  */
@@ -15,9 +14,9 @@ public class BuildTile extends Actor {
     private Texture itemTexture;
 
 
-    public BuildTile() {
+    public BuildTile(final ItemStack itemStack) {
         gridSquareTexture = new Texture("square.png");
-        itemTexture = new Texture(Items.TEST_ITEM_PLS_IGNORE.getTextureName());
+        itemTexture = new Texture(itemStack.item.getTextureName());
         setWidth(TILE_SIZE);
         setHeight(TILE_SIZE);
     }
