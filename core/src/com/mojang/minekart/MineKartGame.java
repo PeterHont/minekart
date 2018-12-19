@@ -10,7 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.mojang.minekart.editor.EditorScreen;
 import com.mojang.minekart.race.RaceScreen;
 
-public class MineKartGame extends Game {
+public class MineKartGame extends Game  {
 	public Skin skin;
 
 	private SpriteBatch batch;
@@ -28,5 +28,12 @@ public class MineKartGame extends Game {
 		raceScreen = new RaceScreen(this);
 		// setScreen(editorScreen);
 		setScreen(raceScreen);
+	}
+
+	public void showRaceScreen() {
+		setScreen(raceScreen);
+	}
+	public void showBuildScreen() {
+		setScreen(editorScreen);
 	}
 }

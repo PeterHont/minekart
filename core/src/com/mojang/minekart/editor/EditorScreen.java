@@ -12,9 +12,11 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.mojang.minekart.MineKartGame;
 
 public class EditorScreen extends ScreenAdapter {
+    private MineKartGame game;
     private Stage stage;
 
     public EditorScreen(MineKartGame game) {
+        this.game = game;
         stage = new Stage();
 
 
@@ -69,7 +71,7 @@ public class EditorScreen extends ScreenAdapter {
             public boolean keyDown(InputEvent event, int keycode) {
                 //If this is TAB key, switch to TrackScreen
                 if (keycode == 61) {
-                    //game.setScreen();
+                    game.showRaceScreen();
                 }
                 return super.keyDown(event, keycode);
             }

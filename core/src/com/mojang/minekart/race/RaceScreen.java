@@ -12,6 +12,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.mojang.minekart.MineKartGame;
 
 public class RaceScreen extends ScreenAdapter {
+    private MineKartGame game;
     public TiledMap map;
 
     public OrthogonalTiledMapRenderer renderer;
@@ -20,6 +21,7 @@ public class RaceScreen extends ScreenAdapter {
     public float movementSpeed = 10.0f;
 
     public RaceScreen(MineKartGame game) {
+        this.game = game;
         map = new TmxMapLoader().load("Simple.tmx");
         renderer = new OrthogonalTiledMapRenderer(map, 1.0f / 16.0f);
 
@@ -29,6 +31,10 @@ public class RaceScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
+        if (Gdx.input.isKeyPressed(Input.Keys.TAB)) {
+            game.showBuildScreen();
+        }
+
         update(delta);
 
         Gdx.gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -69,4 +75,6 @@ public class RaceScreen extends ScreenAdapter {
     @Override
     public void dispose () {
     }
+
+
 }
