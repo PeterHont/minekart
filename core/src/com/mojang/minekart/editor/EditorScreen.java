@@ -22,10 +22,11 @@ public class EditorScreen extends ScreenAdapter {
         cartGridView.setPosition(10, 200);
         stage.addActor(cartGridView);
 
-
-        /*Label topLabel = new Label("Stuff you can buy", game.skin);
+        /*
+        Label topLabel = new Label("Stuff you can buy", game.skin);
         topLabel.setPosition(10, 400);
-        stage.addActor(topLabel);*/
+        stage.addActor(topLabel);
+        */
 
         ItemPoolView itemPoolView = new ItemPoolView();
         itemPoolView.setPosition(300, 300);
