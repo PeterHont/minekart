@@ -6,15 +6,17 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
 /*
-    Shows a single tile in the build grid
+    Shows a single tile square, which can contain a block/item.
  */
-public class CartTileView extends Actor {
+public class BuildTile extends Actor {
+    public final static int TILE_SIZE = 64;
     private Texture gridSquareTexture;
 
-    public CartTileView() {
+
+    public BuildTile() {
         gridSquareTexture = new Texture("square.png");
-        setWidth(32);
-        setHeight(32);
+        setWidth(TILE_SIZE);
+        setHeight(TILE_SIZE);
     }
 
     @Override

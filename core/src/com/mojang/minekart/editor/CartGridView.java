@@ -1,9 +1,5 @@
 package com.mojang.minekart.editor;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 
 /**
@@ -14,7 +10,13 @@ public class CartGridView extends Group {
     private final int gridRows = 2;
 
     public CartGridView() {
-        addActor(new CartTileView());
+        for (int row = 0; row < gridRows; ++row) {
+            for (int col = 0; col < gridCols; ++col) {
+                BuildTile tile = new BuildTile();
+                tile.setPosition(col * BuildTile.TILE_SIZE, row * BuildTile.TILE_SIZE);
+                addActor(tile);
+            }
+        }
     }
 
 

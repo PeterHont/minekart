@@ -14,14 +14,22 @@ public class EditorScreen extends ScreenAdapter {
     public EditorScreen(MineKartGame game) {
         stage = new Stage();
 
-        Label topLabel = new Label("Build your cart!", game.skin);
-        topLabel.setPosition(10, 500);
+        Label topLabel = new Label("Your cart", game.skin);
+        topLabel.setPosition(10, 400);
         stage.addActor(topLabel);
 
-
-
         CartGridView cartGridView = new CartGridView();
+        cartGridView.setPosition(10, 200);
         stage.addActor(cartGridView);
+
+
+        /*Label topLabel = new Label("Stuff you can buy", game.skin);
+        topLabel.setPosition(10, 400);
+        stage.addActor(topLabel);*/
+
+        ItemPoolView itemPoolView = new ItemPoolView();
+        itemPoolView.setPosition(300, 300);
+        stage.addActor(itemPoolView);
 
     }
 
@@ -33,5 +41,15 @@ public class EditorScreen extends ScreenAdapter {
         stage.act(delta);
         stage.draw();
     }
+
+    /*
+    private void addActor(actor, x, y) {
+
+    }
+
+    private void addLabel(text, x, y) {
+
+    }
+    */
 
 }
