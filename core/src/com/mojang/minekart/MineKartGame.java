@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.mojang.minekart.editor.EditorScreen;
+import com.mojang.minekart.race.RaceScreen;
 
 public class MineKartGame extends Game {
 	public Skin skin;
@@ -16,14 +17,17 @@ public class MineKartGame extends Game {
 	private Texture img;
 
 	private EditorScreen editorScreen;
-	
+	private RaceScreen raceScreen;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("minekart-logo.jpg");
 		skin = new Skin(Gdx.files.internal("skin/glassy-ui.json"));
 		editorScreen = new EditorScreen(this);
-		setScreen(editorScreen);
+		raceScreen = new RaceScreen(this);
+		// setScreen(editorScreen);
+		setScreen(raceScreen);
 	}
 
 	/*
