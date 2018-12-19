@@ -2,6 +2,7 @@ package com.mojang.minekart.editor;
 
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -70,7 +71,8 @@ public class EditorScreen extends ScreenAdapter {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
                 //If this is TAB key, switch to TrackScreen
-                if (keycode == 61) {
+                if (keycode == Input.Keys.NUM_2) {
+                    System.out.println("EditorScreen - tab pressed");
                     game.showRaceScreen();
                 }
                 return super.keyDown(event, keycode);

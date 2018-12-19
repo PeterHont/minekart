@@ -31,7 +31,8 @@ public class RaceScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-        if (Gdx.input.isKeyPressed(Input.Keys.TAB)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.NUM_1)) {
+            System.out.println("RaceScreen - tab pressed");
             game.showBuildScreen();
         }
 
