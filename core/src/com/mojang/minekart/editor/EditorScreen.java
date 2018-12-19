@@ -4,6 +4,9 @@ package com.mojang.minekart.editor;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.mojang.minekart.MineKartGame;
@@ -13,6 +16,11 @@ public class EditorScreen extends ScreenAdapter {
 
     public EditorScreen(MineKartGame game) {
         stage = new Stage();
+
+
+        Gdx.input.setInputProcessor(stage);
+        switchScreenWhenTabIsPressed();
+
 
         Label topLabel = new Label("Your cart", game.skin);
         topLabel.setPosition(10, 400);
@@ -34,6 +42,7 @@ public class EditorScreen extends ScreenAdapter {
 
     }
 
+
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -43,14 +52,28 @@ public class EditorScreen extends ScreenAdapter {
         stage.draw();
     }
 
-    /*
-    private void addActor(actor, x, y) {
+
+    private void addActor(Actor actor, int x, int y) {
 
     }
 
-    private void addLabel(text, x, y) {
+    private void addLabel(Label label, int x, int y) {
 
     }
-    */
+
+
+
+    private void switchScreenWhenTabIsPressed() {
+        stage.addListener(new InputListener() {
+            @Override
+            public boolean keyDown(InputEvent event, int keycode) {
+                //If this is TAB key, switch to TrackScreen
+                if (keycode == 61) {
+                    //game.setScreen();
+                }
+                return super.keyDown(event, keycode);
+            }
+        });
+    }
 
 }
